@@ -1,0 +1,116 @@
+<html>
+    <head>
+    <!-- add favicon -->
+    <link rel="icon" href="LaughMedia/favicon.ico" type="image/x-icon" />
+    <title>Im Totally Laughing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <style> @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap'); </style>
+
+    <style>
+        body {
+            height: 100px;
+            background-color: red;
+            background-image:radial-gradient(circle,rgb(74, 74, 74),#000000 75%);
+        }       
+
+        *{
+            transition: 450ms;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 35%;
+            left: 45%;
+            padding: 25px 25px;
+            width: 200px;
+            height: 200px;
+            font-size: 27px;
+            font-family: 'Bungee', cursive;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #fd0303;
+            border: 0;
+            border-radius: 100%;
+            box-shadow: 0 9px rgba(255, 255, 255, 0.194);
+        }
+
+        .button:hover {
+            background-color: #ff0000d4;
+        }
+
+        .button:active {
+            background-color: #d10505f5;
+            box-shadow: 0 5px rgb(58, 56, 56);
+            transform: translateY(4px);
+        }
+        /* Define the confetti animation */
+    @keyframes confetti {
+    0% {
+        transform: rotate(0deg) scale(1);
+        top: 0;
+        left: 0;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        top: 100%;
+        left: 100%;
+    }
+    }
+
+    /* Apply the confetti animation to an element */
+    /* UNDER CONSTRUSCTION */
+    /* .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    animation: confetti 5s linear infinite;
+    } */
+
+    </style>
+
+    <script type="text/javascript">
+        const audio = new Audio("LaughMedia/sound.mp3");
+        const buttons = document.querySelectorAll("button");
+        
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                audio.play();
+                // add class confetti to button
+                button.classList.add("confetti");
+            });
+        });
+    
+    </script>
+    </head>
+
+    <body>
+        <!-- <button class="button"> Laugh </button> -->
+        
+        <!-- Audio element -->
+        <audio id="sound" src="LaughMedia/sound.mp3"></audio>
+
+        <!-- Button element -->
+        <button onclick="playSound()" class="button" autofocus>Hilarious</button>
+
+        <!-- JavaScript function to play the sound -->
+        <script>
+            function playSound() {
+            // Get the audio element
+            var audio = document.getElementById("sound");
+
+            // Play the sound
+            audio.play();
+            }
+        </script>
+    </body>
+
+
+</html>
